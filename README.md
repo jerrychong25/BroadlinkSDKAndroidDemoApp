@@ -1,4 +1,4 @@
-# Broadlink SDK Android Demo
+# Broadlink SDK Android Demo App
 
 ## Getting Started
 
