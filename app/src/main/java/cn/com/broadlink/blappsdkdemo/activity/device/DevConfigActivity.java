@@ -11,6 +11,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -23,7 +24,7 @@ import cn.com.broadlink.blappsdkdemo.common.BLToastUtils;
 import cn.com.broadlink.blappsdkdemo.intferfacer.DevConfigModel;
 import cn.com.broadlink.blappsdkdemo.presenter.DevConfigIModeImpl;
 import cn.com.broadlink.blappsdkdemo.presenter.DevConfigListener;
-import cn.com.broadlink.blappsdkdemo.view.BLAlert;
+//import cn.com.broadlink.blappsdkdemo.view.BLAlert;
 import cn.com.broadlink.sdk.param.controller.BLDeviceConfigParam;
 import cn.com.broadlink.sdk.result.controller.BLDeviceConfigResult;
 
@@ -58,19 +59,19 @@ public class DevConfigActivity extends TitleActivity implements DevConfigListene
         mPasswordView.requestFocus();
     }
 
-    public void apConfig(View view){
-        BLAlert.showDialog(DevConfigActivity.this, "Make sure you have connect to the device's Ap (maybe like \"BroadlinkProv\")", new BLAlert.DialogOnClickListener() {
-            @Override
-            public void onPositiveClick() {
-                BLCommonUtils.toActivity(DevConfigActivity.this, DevApPairActivity.class);
-            }
-
-            @Override
-            public void onNegativeClick() {
-
-            }
-        });
-    }
+//    public void apConfig(View view){
+//        BLAlert.showDialog(DevConfigActivity.this, "Make sure you have connect to the device's Ap (maybe like \"BroadlinkProv\")", new BLAlert.DialogOnClickListener() {
+//            @Override
+//            public void onPositiveClick() {
+//                BLCommonUtils.toActivity(DevConfigActivity.this, DevApPairActivity.class);
+//            }
+//
+//            @Override
+//            public void onNegativeClick() {
+//
+//            }
+//        });
+//    }
     
     public void devConfigByVersion2(View view){
         if (BLCommonUtils.isWifiConnect(DevConfigActivity.this)) {
@@ -81,6 +82,10 @@ public class DevConfigActivity extends TitleActivity implements DevConfigListene
             configParam.setSsid(ssid);
             configParam.setPassword(password);
             configParam.setVersion(2);
+
+            Log.d("DevConfigActivity", "devConfigByVersion2 configParam.ssid: " + configParam.getSsid());
+            Log.d("DevConfigActivity", "devConfigByVersion2 configParam.password: " + configParam.getPassword());
+            Log.d("DevConfigActivity", "devConfigByVersion2 configParam.version: " + configParam.getVersion());
 
             SharedPreferences.Editor editor = mWiFiPreferences.edit();
             editor.putString(ssid, password);

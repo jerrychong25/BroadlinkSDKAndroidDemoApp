@@ -69,9 +69,9 @@ public class MainActivity extends TitleActivity {
         mDeviceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkLoginAndFamily(true)) {
+//                if (checkLoginAndFamily(true)) {
                     BLCommonUtils.toActivity(MainActivity.this, DevMainActivity.class);
-                }
+//                }
             }
         });
 
@@ -96,9 +96,9 @@ public class MainActivity extends TitleActivity {
             @Override
             public void onClick(View v) {
 
-                if (checkLoginAndFamily(false)) {
+//                if (checkLoginAndFamily(false)) {
                     BLCommonUtils.toActivity(MainActivity.this, FamilyListActivity.class);
-                }
+//                }
             }
         });
 
@@ -106,9 +106,9 @@ public class MainActivity extends TitleActivity {
             @Override
             public void onClick(View v) {
 
-                if (checkLoginAndFamily(true)) {
+//                if (checkLoginAndFamily(true)) {
                     BLCommonUtils.toActivity(MainActivity.this, IRCodeMainActivity.class);
-                }
+//                }
             }
         });
 

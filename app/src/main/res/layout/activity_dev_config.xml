@@ -78,22 +78,22 @@
             android:textColor="#272a29"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingLeft="5dp"-->
+        <!--android:paddingRight="5dp">-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:onClick="apConfig"
-            android:text="@string/Config_AP"
-            android:textColor="#272a29"/>
-    </LinearLayout>
+        <!--<Button-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:onClick="apConfig"-->
+            <!--android:text="@string/Config_AP"-->
+            <!--android:textColor="#272a29"/>-->
+    <!--</LinearLayout>-->
 
     <EditText
         android:id="@+id/et_result"

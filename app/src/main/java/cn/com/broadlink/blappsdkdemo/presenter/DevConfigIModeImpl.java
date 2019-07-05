@@ -26,10 +26,13 @@ public class DevConfigIModeImpl implements DevConfigModel{
                 });
 
                 final BLDeviceConfigResult result = BLLet.Controller.deviceConfig(deviceConfigParam);
+
+                Log.d("DevConfigIModeImpl", "BROADLINK_LET_SDK_LOG result: " + result);
+
                 if (result.succeed()) {
-                    Log.d("BROADLINK_LET_SDK_LOG", "DeviceIP: " + result.getDevaddr());
-                    Log.d("BROADLINK_LET_SDK_LOG", "Did: " + result.getDid());
-                    Log.d("BROADLINK_LET_SDK_LOG", "Mac: " + result.getMac());
+                    Log.d("DevConfigIModeImpl", "BROADLINK_LET_SDK_LOG DeviceIP: " + result.getDevaddr());
+                    Log.d("DevConfigIModeImpl", "BROADLINK_LET_SDK_LOG Did: " + result.getDid());
+                    Log.d("DevConfigIModeImpl", "BROADLINK_LET_SDK_LOG Mac: " + result.getMac());
                 }
 
                 handler.post(new Runnable() {
