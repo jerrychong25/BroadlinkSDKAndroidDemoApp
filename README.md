@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-This is a mobile app that integrates Broadlink SDK, which modified from [APPSDK_Android_Demo](https://github.com/ibroadlink/APPSDK_Android_Demo).
+This is a mobile app that integrates Broadlink SDK for contolling RM Pro devices, which is modified from [iBroadlink's APPSDK_Android_Demo](https://github.com/ibroadlink/APPSDK_Android_Demo).
 
 ## Deployment
 
