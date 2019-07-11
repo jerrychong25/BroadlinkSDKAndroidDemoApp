@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -84,14 +85,22 @@ public class DevProbeListActivity extends TitleActivity {
         mLocalDeviceManager = BLLocalDeviceManager.getInstance();
         final boolean isAdd2Family = FamilyModuleListActivity.class.getSimpleName().equals(mFromWhere);
         if(!isAdd2Family){
+            Log.d("DevProbeListActivity", "initData() Flow 1");
+
             mAdd2SdkDevs = mLocalDeviceManager.getDevicesAddInSDK();
             for (BLDNADevice item : mLocalDeviceManager.getLocalDevices()) {
                 if (!isContain(item)) {
                     mDevices.add(item);
+
+                    Log.d("DevProbeListActivity", "initData() mDevices: " + mDevices);
                 }
             }
         }else{
+            Log.d("DevProbeListActivity", "initData() Flow 2");
+
             mDevices = mLocalDeviceManager.getLocalDevices();
+
+            Log.d("DevProbeListActivity", "initData() mDevices: " + mDevices);
         }
     }
 
@@ -124,10 +133,18 @@ public class DevProbeListActivity extends TitleActivity {
         mLocalDeviceManager.setBlLocalDeviceListener(new BLLocalDeviceListener() {
             @Override
             public void deviceChange() {
+
+                Log.d("DevProbeListActivity", "setListener() Flow 1");
+
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        Log.d("DevProbeListActivity", "setListener() Flow 2");
+
                         mDevices = mLocalDeviceManager.getLocalDevices();
+
+                        Log.d("DevProbeListActivity", "setListener() mDevices: " + mDevices);
+
                         mDeviceAdapter.notifyDataSetChanged();
                     }
                 });
@@ -138,7 +155,12 @@ public class DevProbeListActivity extends TitleActivity {
             @Override
             public void run() {
 
+                Log.d("DevProbeListActivity", "setListener() Flow 3");
+
                 mDevices = mLocalDeviceManager.getLocalDevices();
+
+                Log.d("DevProbeListActivity", "setListener() mDevices: " + mDevices);
+
                 mDeviceAdapter.notifyDataSetChanged();
                 checkHandler.postDelayed(this, 5 * 1000);
             }
@@ -191,7 +213,6 @@ public class DevProbeListActivity extends TitleActivity {
             }
         });
     }
-
 
     private class QueryRoomListTask extends AsyncTask<Void, Void, BLSQueryRoomListResult> {
 
