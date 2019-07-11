@@ -14,6 +14,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="@string/Account_Control"
+        android:visibility="invisible"
         />
 
     <Button
@@ -33,7 +34,6 @@
         android:paddingRight="20dp"
         android:text="@string/Device_Control"
         />
-
 
     <Button
         android:id="@+id/btn_ircode_control"
